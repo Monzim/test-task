@@ -5,10 +5,12 @@ import 'package:test_task/app/data/http/get_data.dart';
 import 'package:test_task/app/data/model/product_model.dart';
 
 class ExploreController extends GetxController {
-  final Client _client = Client();
+  final Client client = Client();
   final RxBool isLoading = true.obs;
-  Product? items;
+
   late CacheManager customCacheManager;
+
+  Product? items;
 
   @override
   void onInit() {
@@ -24,9 +26,9 @@ class ExploreController extends GetxController {
   }
 
   _getData() async {
-    await GetData.getProduct(_client).then((value) {
-      isLoading.value = false;
+    await GetData.getProduct(client).then((value) {
       items = value;
+      isLoading.value = false;
     });
   }
 }

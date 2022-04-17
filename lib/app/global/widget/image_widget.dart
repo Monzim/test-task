@@ -7,11 +7,19 @@ class CacheImageWidget extends StatelessWidget {
   const CacheImageWidget({
     Key? key,
     required this.imageUrl,
-    required this.cacheManager,
+    this.blendMode,
+    this.filterQuality = FilterQuality.low,
+    this.boxFit = BoxFit.cover,
+    this.cacheManager,
+    this.colorFilter,
   }) : super(key: key);
 
   final String imageUrl;
-  final CacheManager cacheManager;
+  final CacheManager? cacheManager;
+  final ColorFilter? colorFilter;
+  final BlendMode? blendMode;
+  final FilterQuality filterQuality;
+  final BoxFit boxFit;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +29,15 @@ class CacheImageWidget extends StatelessWidget {
         key: UniqueKey(),
         cacheManager: cacheManager,
         imageUrl: imageUrl,
-        fit: BoxFit.cover,
+        fit: boxFit,
+        colorBlendMode: blendMode,
+        filterQuality: filterQuality,
+        imageBuilder: (context, imageProvider) => Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+                image: imageProvider, fit: boxFit, colorFilter: colorFilter),
+          ),
+        ),
         placeholder: (context, url) => Container(
           decoration: const BoxDecoration(
               gradient: LinearGradient(colors: [

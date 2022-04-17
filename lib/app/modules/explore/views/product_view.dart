@@ -84,7 +84,8 @@ class ProductList extends StatelessWidget {
                         avaterUrl:
                             'https://cdn-icons-png.flaticon.com/512/147/147142.png',
                         onFollow: () {},
-                        onOkay: () => Get.back(),
+                        onOkay: () => Get.toNamed(Routes.DETAILS,
+                            arguments: controller.items!.products[index]),
                       );
                     },
                     child: CacheImageWidget(

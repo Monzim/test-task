@@ -35,7 +35,7 @@ class ShowItemWidget extends StatelessWidget {
         decoration: showCustomBarier
             ? BoxDecoration(
                 color: customBarierColor ??
-                    const Color(0xFF666666).withOpacity(0.5),
+                    const Color(0x00000000).withOpacity(0.5),
                 border: Border.all(
                   width: 2.w,
                 ),

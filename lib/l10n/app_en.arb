@@ -11,7 +11,14 @@
     "viewPost": "View Post",
     "follow": "Follow",
     "dhaka": "Dhaka",
-    "bangladesh": "Bangladesh"
+    "bangladesh": "Bangladesh",
+    "description": "Description",
+    "price": "Price",
+    "brand": "Brand",
+    "availablefeatures": "Available Features",
+    "features": "1. Explore Screen\n2. Shop Screen\n3. Product Detail page\n4. App Localization\n5. Caching Image\n6. Button Tooltip \n7. Clean Code\n8. MVC Pattern",
+    "telegram": "Telegram",
+    "twitter": "Twitter"
     
 
 

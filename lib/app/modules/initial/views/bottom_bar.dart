@@ -72,6 +72,7 @@ class CBottomBar extends GetView<InitialController> {
                 title: _locale.shop,
                 onPressed: () {
                   controller.activeButton(3);
+                  Get.toNamed(Routes.SHOP);
                 },
                 icon: Icons.shop,
                 isSelected: controller.active[3].value,
