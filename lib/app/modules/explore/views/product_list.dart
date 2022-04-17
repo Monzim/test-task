@@ -45,6 +45,7 @@ class ProductList extends StatelessWidget {
                     ),
                     itemBuilder: (context, index) => ImageWidget(
                       productItem: controller.items!.products[index],
+                      cacheManager: controller.customCacheManager,
                     ),
                   ))),
       // const CBottomBar(),
