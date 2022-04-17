@@ -7,7 +7,7 @@ class CIconButton extends StatelessWidget {
     this.title,
     this.icon,
     required this.onPressed,
-    this.isSelected = false,
+    required this.isSelected,
   }) : super(key: key);
 
   final String? title;

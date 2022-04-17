@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test_task/app/global/global.dart';
 
-class CBottomBar extends StatelessWidget {
+import '../controllers/initial_controller.dart';
+
+class CBottomBar extends GetView<InitialController> {
   const CBottomBar({Key? key}) : super(key: key);
 
   @override
@@ -20,21 +22,32 @@ class CBottomBar extends StatelessWidget {
               SizedBox(width: 20.w),
               CIconButton(
                 title: _locale!.home,
-                onPressed: () => Get.offAllNamed(Routes.HOME),
+                onPressed: () {
+                  controller.activeButton(0);
+
+                  Get.offAllNamed(Routes.HOME);
+                },
                 icon: Icons.home,
+                isSelected: controller.active[0].value,
               ),
               SizedBox(width: 15.w),
-              CIconButton(
-                title: _locale.explore,
-                onPressed: () => Get.toNamed(Routes.EXPLORE),
-                icon: Icons.explore,
-              ),
+              Obx(() => CIconButton(
+                    title: _locale.explore,
+                    onPressed: () {
+                      controller.activeButton(1);
+                      Get.toNamed(Routes.EXPLORE);
+                    },
+                    icon: Icons.explore,
+                    isSelected: controller.active[1].value,
+                  )),
             ],
           ),
           Padding(
             padding: EdgeInsets.only(bottom: 15.h),
             child: FloatingActionButton(
-              onPressed: () {},
+              onPressed: () {
+                controller.activeButton(1);
+              },
               tooltip: _locale.add,
               elevation: 2,
               backgroundColor: const Color(0xff040415),
@@ -48,14 +61,20 @@ class CBottomBar extends StatelessWidget {
             children: [
               CIconButton(
                 title: _locale.inbox,
-                onPressed: () {},
+                onPressed: () {
+                  controller.activeButton(2);
+                },
                 icon: Icons.inbox,
+                isSelected: controller.active[2].value,
               ),
               SizedBox(width: 15.w),
               CIconButton(
                 title: _locale.shop,
-                onPressed: () {},
+                onPressed: () {
+                  controller.activeButton(3);
+                },
                 icon: Icons.shop,
+                isSelected: controller.active[3].value,
               ),
               SizedBox(width: 20.w),
             ],

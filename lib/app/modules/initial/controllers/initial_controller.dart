@@ -5,11 +5,29 @@ import 'package:test_task/app/global/global.dart';
 class InitialController extends GetxController {
   late Rx<Locale> localeProvider;
 
+  // final active1 = false.obs;
+  // final active2 = false.obs;
+  // final active3 = false.obs;
+  // final active4 = false.obs;
+  final active = [
+    false.obs,
+    false.obs,
+    false.obs,
+    false.obs,
+  ];
+
   @override
   void onInit() {
     localeProvider = AppLocalizations.supportedLocales.first.obs;
 
     super.onInit();
+  }
+
+  activeButton(int index) {
+    for (var element in active) {
+      element(false);
+    }
+    active[index](true);
   }
 
   void toggleLocale() {
