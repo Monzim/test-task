@@ -1,17 +1,16 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
-import 'package:test_task/app/data/model/product_item_model.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class ImageWidget extends StatelessWidget {
-  const ImageWidget({
+class CacheImageWidget extends StatelessWidget {
+  const CacheImageWidget({
     Key? key,
-    required this.productItem,
+    required this.imageUrl,
     required this.cacheManager,
   }) : super(key: key);
 
-  final ProductItem productItem;
+  final String imageUrl;
   final CacheManager cacheManager;
 
   @override
@@ -21,7 +20,7 @@ class ImageWidget extends StatelessWidget {
       child: CachedNetworkImage(
         key: UniqueKey(),
         cacheManager: cacheManager,
-        imageUrl: productItem.thumbnail,
+        imageUrl: imageUrl,
         fit: BoxFit.cover,
         placeholder: (context, url) => Container(
           decoration: const BoxDecoration(

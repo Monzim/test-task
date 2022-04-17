@@ -3,6 +3,7 @@ export 'package:flutter_screenutil/flutter_screenutil.dart';
 export 'package:font_awesome_flutter/font_awesome_flutter.dart';
 export 'package:flutter/foundation.dart';
 export 'widget/language_change_btn.dart';
+export 'widget/image_widget.dart';
 export 'widget/c_app_bar.dart';
 export 'widget/c_icon_btn.dart';
 export 'package:test_task/app/modules/initial/views/bottom_bar.dart';
