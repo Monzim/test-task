@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:get/get.dart';
 
 import '../modules/explore/bindings/explore_binding.dart';
@@ -21,16 +23,19 @@ class AppPages {
       name: _Paths.HOME,
       page: () => HomeView(),
       binding: HomeBinding(),
+      transition: Transition.noTransition,
     ),
     GetPage(
       name: _Paths.INITIAL,
       page: () => InitialView(),
       binding: InitialBinding(),
+      transition: Transition.noTransition,
     ),
     GetPage(
       name: _Paths.EXPLORE,
       page: () => ExploreView(),
       binding: ExploreBinding(),
+      transition: Transition.noTransition,
     ),
   ];
 }

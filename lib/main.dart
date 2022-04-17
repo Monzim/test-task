@@ -29,6 +29,7 @@ class MyApp extends StatelessWidget {
             onGenerateTitle: (BuildContext context) =>
                 AppLocalizations.of(context)!.appTitle,
             theme: ThemeData(
+              primarySwatch: Colors.orange,
               textTheme: CustomTextTheme.textThemeLight,
             ),
             initialRoute: AppPages.INITIAL,

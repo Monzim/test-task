@@ -1,23 +1,19 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
+import 'package:test_task/app/global/global.dart';
 
 import '../controllers/explore_controller.dart';
+import 'product_list.dart';
 
 class ExploreView extends GetView<ExploreController> {
+  const ExploreView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('ExploreView'),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Text(
-          'ExploreView is working',
-          style: TextStyle(fontSize: 20),
-        ),
-      ),
+    return const Scaffold(
+      appBar: CAppBar(),
+      body: ProductList(),
+      bottomNavigationBar: CBottomBar(),
     );
   }
 }

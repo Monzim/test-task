@@ -1,5 +1,14 @@
 {
-    "appTitle": "TestTask"
+    "appTitle": "TestTask",
+    "home": "Home",
+    "homeScreenWelcome": "Welcome to TestTask",
+    "explore": "Explore",
+    "inbox": "Inbox",
+    "shop": "Shop",
+    "add": "Add new",
+    "searchhint": "Search in Swipexyz",
+    "language": "Language"
+    
 
 
 }

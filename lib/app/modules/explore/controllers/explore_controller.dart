@@ -1,20 +1,23 @@
 import 'package:get/get.dart';
+import 'package:http/http.dart';
+import 'package:test_task/app/data/http/get_data.dart';
+import 'package:test_task/app/data/model/product_model.dart';
 
 class ExploreController extends GetxController {
-  //TODO: Implement ExploreController
+  final Client _client = Client();
+  final RxBool isLoading = true.obs;
+  Product? items;
 
-  final count = 0.obs;
   @override
   void onInit() {
+    _getData();
     super.onInit();
   }
 
-  @override
-  void onReady() {
-    super.onReady();
+  _getData() async {
+    GetData.getProduct(_client).then((value) {
+      isLoading.value = false;
+      items = value;
+    });
   }
-
-  @override
-  void onClose() {}
-  void increment() => count.value++;
 }
