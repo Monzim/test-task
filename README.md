@@ -1,6 +1,6 @@
-# test_task
+![Screenshot](https://github.com/Monzim/test-task/blob/main/images/hd.jpg)
 
-# Flutter Shop App.
+## Flutter Shop App.
 
 ## Features
 
@@ -12,3 +12,5 @@
 - Button Tooltip
 - Clean Code
 - MVC Pattern
+- 
+
